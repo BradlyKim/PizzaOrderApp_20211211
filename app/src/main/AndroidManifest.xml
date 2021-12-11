@@ -14,6 +14,9 @@
         android:theme="@style/Theme.PizzaOrderApp_20211211"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EditNickNameActivity"
+            android:exported="true" />
+        <activity
             android:name=".ViewStoreDetailActivity"
             android:exported="true" />
         <activity
