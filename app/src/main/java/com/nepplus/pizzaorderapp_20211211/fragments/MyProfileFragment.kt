@@ -1,5 +1,6 @@
 package com.nepplus.pizzaorderapp_20211211.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,6 +31,23 @@ class MyProfileFragment : Fragment() {
 
             val myIntent = Intent(requireContext(), EditNickNameActivity::class.java)
             startActivityForResult(myIntent, REQ_FOR_NICKNAME)
+
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQ_FOR_NICKNAME) {
+
+            if (resultCode == Activity.RESULT_OK) {
+
+                val nickname = data!!.getStringExtra("nick" )
+
+                txtNickName.text = nickname
+
+            }
 
         }
 
